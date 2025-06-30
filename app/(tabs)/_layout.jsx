@@ -12,8 +12,6 @@ export default function TabLayout() {
                 tabBarInActiveTintColor: Colors.dark.text,
                 tabBarStyle: {
                     backgroundColor: Colors.SECONDARY,
-                    // paddingBottom: 14,
-                    // height: 75,
                 },
                 tabBarLabelStyle: { fontSize: 12, fontWeight: "bold" },
             }}
