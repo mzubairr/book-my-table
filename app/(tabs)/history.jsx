@@ -4,56 +4,49 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
 import {
   collection,
-  getDocs,
+  onSnapshot,
   query,
   where
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { ActivityIndicator, Alert, FlatList, Text, TouchableOpacity, View } from "react-native";
+import { ActivityIndicator, FlatList, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { db } from "../../lib/firebase";
 
 const History = () => {
   const [userEmail, setUserEmail] = useState(null);
   const [bookings, setBookings] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [details, setDetails] = useState(false);
   const [expandData, SetexpandData] = useState(null);
   const router = useRouter();
 
   useEffect(() => {
-    const fetchUserEmail = async () => {
+    const getEmail = async () => {
       const email = await AsyncStorage.getItem("userEmail");
       setUserEmail(email);
     };
-
-    fetchUserEmail();
+    getEmail();
   }, []);
 
-  const fetchBookings = async () => {
-    if (userEmail) {
-      try {
-        const bookingCollection = collection(db, "bookings");
-        const bookingQuery = query(
-          bookingCollection,
-          where("email", "==", userEmail)
-        );
-        const bookingSnapshot = await getDocs(bookingQuery);
-
-        const bookingList = bookingSnapshot.docs.map((doc) => ({
+  useEffect(() => {
+    if (!userEmail) return;
+    const q = query(collection(db, "bookings"), where("email", "==", userEmail));
+    const unsubscribe = onSnapshot(
+      q, (querySnapshot) => {
+        const bookingList = querySnapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
         setBookings(bookingList);
-      } catch (error) {
-        Alert.alert("Error", "Could not fetch bookings");
-      }
-    }
-    setLoading(false);
-  };
 
-  useEffect(() => {
-    fetchBookings();
+      },
+      (error) => {
+        console.error("Error in listener: ", error);
+      }
+    );
+
+    return unsubscribe;
   }, [userEmail]);
 
   if (loading) {
@@ -82,9 +75,8 @@ const History = () => {
             </Text>
           </View>
           : < FlatList
+            contentContainerStyle={{ paddingBottom: 20 }}
             data={bookings}
-            onRefresh={fetchBookings}
-            refreshing={loading}
             keyExtractor={(item) => item.id}
             renderItem={({ item }) => (
               <View className="py-4 px-3 border-b-8 border-[#fb9b33] bg-[#F7F7F7] rounded-xl my-3">
@@ -139,7 +131,6 @@ const History = () => {
                 }
               </View>
             )}
-            contentContainerStyle={{ paddingBottom: 20 }}
           />
       ) : (
         <View className="flex-1 justify-center items-center">
