@@ -1,50 +1,75 @@
-# Welcome to your Expo app 👋
+# 📱 Book My Table
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Book tables at your favorite restaurants effortlessly without the hassle of calling or waiting.
 
-## Get started
+## 🔧 Features
 
-1. Install dependencies
+- 📆 Select booking date  
+- 👥 Choose number of guests  
+- ⏰ View available time slots  
+- 📝 Non-logged-in users can also book by filling guest form  
+- 🔥 Clean UI built with NativeWind  
+- ☁️ Firebase Firestore & Authentication integration  
 
-   ```bash
-   npm install
-   ```
+## 📸 App Screenshots
 
-2. Start the app
+![Welcome Screen](https://github.com/user-attachments/assets/0f483ff7-2051-44af-8e38-c16ed28e5418)  
+![Login Screen](https://github.com/user-attachments/assets/74d4227c-2a9d-498b-a033-f10b8c1492d3)  
+![Home Screen](https://github.com/user-attachments/assets/dc0ce893-ec04-4149-b149-62d45ec4330c)  
+![Restaurant Info Screen](https://github.com/user-attachments/assets/8da0e10c-7b23-46ab-8467-e0bfce309b74)
+![Guest Booking Form](https://github.com/user-attachments/assets/66f1c14e-e387-49a6-affe-1f5fbecc3429)
+![History Screen](https://github.com/user-attachments/assets/c618f137-cec5-475e-8f99-239f23e157b9)
+![Profile Screen](https://github.com/user-attachments/assets/009f2090-333d-43ff-b8c8-becd866d2e4c)
 
-   ```bash
-   npx expo start
-   ```
+## ⚙️ Setup Instructions
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### 1. Clone the Repository
 
 ```bash
-npm run reset-project
+git clone https://github.com/mzubairr/book-my-table.git
+cd book-my-table
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Install Dependencies
 
-## Learn more
+```bash
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### 3. Run the App
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npx expo start
+```
 
-## Join the community
+> Open in Expo Go app or Android/iOS emulator.
 
-Join our community of developers creating universal apps.
+## 📁 Folder Structure
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```
+BookMyTable/
+├── app/         → All screens and navigation (Expo Router)
+├── assets/      → App images and icons
+├── components/  → Reusable UI components (Authentication, FindSlots)
+├── lib/         → Firebase config and helper functions
+└── utils/       → Form validation schema
+```
+
+## 🛠 Tech Stack
+
+- React Native (Expo)
+- Firebase Firestore & Authentication
+- NativeWind (Tailwind CSS for React Native)
+- Expo Router
+
+## 🚀 Usage
+
+- Users can browse restaurant listings, view details, and check available slots.
+- Logged-in users can book instantly and view their booking history.
+- Guests can also book by filling in basic info (name, number) without logging in.
+
+## 📝 Notes
+
+- The booking form uses **Yup** schema validation to ensure correct user input.
+- Firebase handles bookings for both logged-in users and guests.
+- Data is stored securely in Firestore and fetched in real-time.
