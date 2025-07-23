@@ -11,15 +11,35 @@ Book tables at your favorite restaurants effortlessly without the hassle of call
 - 🔥 Clean UI built with NativeWind  
 - ☁️ Firebase Firestore & Authentication integration  
 
+--- 
 ## 📸 App Screenshots
 
-![Welcome Screen](https://github.com/user-attachments/assets/0f483ff7-2051-44af-8e38-c16ed28e5418)  
-![Login Screen](https://github.com/user-attachments/assets/74d4227c-2a9d-498b-a033-f10b8c1492d3)  
-![Home Screen](https://github.com/user-attachments/assets/dc0ce893-ec04-4149-b149-62d45ec4330c)  
-![Restaurant Info Screen](https://github.com/user-attachments/assets/8da0e10c-7b23-46ab-8467-e0bfce309b74)
-![Guest Booking Form](https://github.com/user-attachments/assets/66f1c14e-e387-49a6-affe-1f5fbecc3429)
-![History Screen](https://github.com/user-attachments/assets/c618f137-cec5-475e-8f99-239f23e157b9)
-![Profile Screen](https://github.com/user-attachments/assets/009f2090-333d-43ff-b8c8-becd866d2e4c)
+### Welcome Screen  
+<img src="https://github.com/user-attachments/assets/0f483ff7-2051-44af-8e38-c16ed28e5418" width="350" alt="Welcome Screen" />  
+<br>
+
+### Login Screen  
+<img src="https://github.com/user-attachments/assets/74d4227c-2a9d-498b-a033-f10b8c1492d3" width="350" alt="Login Screen" />  
+<br>
+
+### Home Screen  
+<img src="https://github.com/user-attachments/assets/dc0ce893-ec04-4149-b149-62d45ec4330c" width="350" alt="Home Screen" />  
+<br>
+
+### Restaurant Info Screen  
+<img src="https://github.com/user-attachments/assets/8da0e10c-7b23-46ab-8467-e0bfce309b74" width="350" alt="Restaurant Info Screen" />  
+<br>
+
+### Guest Booking Form  
+<img src="https://github.com/user-attachments/assets/66f1c14e-e387-49a6-affe-1f5fbecc3429" width="350" alt="Guest Booking Form" />  
+<br>
+
+### History Screen  
+<img src="https://github.com/user-attachments/assets/c618f137-cec5-475e-8f99-239f23e157b9" width="350" alt="History Screen" />  
+<br>
+
+### Profile Screen  
+<img src="https://github.com/user-attachments/assets/009f2090-333d-43ff-b8c8-becd866d2e4c" width="350" alt="Profile Screen" />
 
 ## ⚙️ Setup Instructions
 
