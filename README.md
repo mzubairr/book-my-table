@@ -2,6 +2,9 @@
 
 Book tables at your favorite restaurants effortlessly without the hassle of calling or waiting.
 
+## 📺 Project Demo
+<video src="https://github.com/user-attachments/assets/4b99f2e9-8999-41a0-9d10-ffd2ae3bf498" controls></video>
+
 ## 🔧 Features
 
 - 📆 Select booking date  
